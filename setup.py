@@ -78,7 +78,8 @@ def _get_gpu_extra_compile_args():
     if torch.cuda.is_available():
         return []
     else:
-        return ["-arch=compute_60"]
+        # return ["-arch=compute_60"]
+        return ["-arch=compute_80"] # Albert
 
 
 def get_extensions():

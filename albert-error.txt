@@ -1,0 +1,446 @@
+    error: subprocess-exited-with-error
+    
+    × python setup.py develop did not run successfully.
+    │ exit code: 1
+    ╰─> [215 lines of output]
+        running develop
+        /home/ag2435/.conda/envs/fast-transformers-gpu/lib/python3.12/site-packages/setuptools/command/develop.py:40: EasyInstallDeprecationWarning: easy_install command is deprecated.
+        !!
+        
+                ********************************************************************************
+                Please avoid running ``setup.py`` and ``easy_install``.
+                Instead, use pypa/build, pypa/installer or other
+                standards-based tools.
+        
+                See https://github.com/pypa/setuptools/issues/917 for details.
+                ********************************************************************************
+        
+        !!
+          easy_install.initialize_options(self)
+        /home/ag2435/.conda/envs/fast-transformers-gpu/lib/python3.12/site-packages/setuptools/_distutils/cmd.py:66: SetuptoolsDeprecationWarning: setup.py install is deprecated.
+        !!
+        
+                ********************************************************************************
+                Please avoid running ``setup.py`` directly.
+                Instead, use pypa/build, pypa/installer or other
+                standards-based tools.
+        
+                See https://blog.ganssle.io/articles/2021/10/setup-py-deprecated.html for details.
+                ********************************************************************************
+        
+        !!
+          self.initialize_options()
+        running egg_info
+        writing pytorch_fast_transformers.egg-info/PKG-INFO
+        writing dependency_links to pytorch_fast_transformers.egg-info/dependency_links.txt
+        writing requirements to pytorch_fast_transformers.egg-info/requires.txt
+        writing top-level names to pytorch_fast_transformers.egg-info/top_level.txt
+        /home/ag2435/.conda/envs/fast-transformers-gpu/lib/python3.12/site-packages/torch/utils/cpp_extension.py:500: UserWarning: Attempted to use ninja as the BuildExtension backend but we could not find ninja.. Falling back to using the slow distutils backend.
+          warnings.warn(msg.format('we could not find ninja.'))
+        reading manifest file 'pytorch_fast_transformers.egg-info/SOURCES.txt'
+        adding license file 'LICENSE'
+        writing manifest file 'pytorch_fast_transformers.egg-info/SOURCES.txt'
+        running build_ext
+        /home/ag2435/.conda/envs/fast-transformers-gpu/lib/python3.12/site-packages/torch/utils/cpp_extension.py:415: UserWarning: The detected CUDA version (11.2) has a minor version mismatch with the version that was used to compile PyTorch (11.8). Most likely this shouldn't be a problem.
+          warnings.warn(CUDA_MISMATCH_WARN.format(cuda_str_version, torch.version.cuda))
+        building 'fast_transformers.hashing.hash_cuda' extension
+        /usr/local/cuda/bin/nvcc -I/home/ag2435/.conda/envs/fast-transformers-gpu/lib/python3.12/site-packages/torch/include -I/home/ag2435/.conda/envs/fast-transformers-gpu/lib/python3.12/site-packages/torch/include/torch/csrc/api/include -I/home/ag2435/.conda/envs/fast-transformers-gpu/lib/python3.12/site-packages/torch/include/TH -I/home/ag2435/.conda/envs/fast-transformers-gpu/lib/python3.12/site-packages/torch/include/THC -I/usr/local/cuda/include -I/home/ag2435/.conda/envs/fast-transformers-gpu/include/python3.12 -c fast_transformers/hashing/hash_cuda.cu -o build/temp.linux-x86_64-cpython-312/fast_transformers/hashing/hash_cuda.o -D__CUDA_NO_HALF_OPERATORS__ -D__CUDA_NO_HALF_CONVERSIONS__ -D__CUDA_NO_BFLOAT16_CONVERSIONS__ -D__CUDA_NO_HALF2_OPERATORS__ --expt-relaxed-constexpr --compiler-options '-fPIC' -DTORCH_API_INCLUDE_EXTENSION_H -DPYBIND11_COMPILER_TYPE=\"_gcc\" -DPYBIND11_STDLIB=\"_libstdcpp\" -DPYBIND11_BUILD_ABI=\"_cxxabi1011\" -DTORCH_EXTENSION_NAME=hash_cuda -D_GLIBCXX_USE_CXX11_ABI=0 -gencode=arch=compute_86,code=compute_86 -gencode=arch=compute_86,code=sm_86 -std=c++17
+        /home/ag2435/.conda/envs/fast-transformers-gpu/lib/python3.12/site-packages/torch/include/torch/csrc/jit/api/module.h: In constructor ‘torch::jit::slot_iterator_impl<Policy>::slot_iterator_impl(torch::jit::Module, bool, bool)’:
+        /home/ag2435/.conda/envs/fast-transformers-gpu/lib/python3.12/site-packages/torch/include/torch/csrc/jit/api/module.h:409:113: error: use of deleted function ‘torch::jit::Module::Module(torch::jit::Module&&)’
+          409 |       bool return_module) // if true include root itself as the first thing
+              |                                                                                                                 ^
+        /home/ag2435/.conda/envs/fast-transformers-gpu/lib/python3.12/site-packages/torch/include/torch/csrc/jit/api/module.h:93:1: note: declared here
+           93 |   Module(Module&&) noexcept = default;
+              | ^ ~~~~
+        /home/ag2435/.conda/envs/fast-transformers-gpu/lib/python3.12/site-packages/torch/include/c10/util/strong_type.h: At global scope:
+        /home/ag2435/.conda/envs/fast-transformers-gpu/lib/python3.12/site-packages/torch/include/c10/util/strong_type.h:141:1: warning: attribute ignored [-Wattributes]
+          141 |   STRONG_NODISCARD
+              | ^
+        /home/ag2435/.conda/envs/fast-transformers-gpu/lib/python3.12/site-packages/torch/include/c10/util/strong_type.h:141:1: note: an attribute that appertains to a type-specifier is ignored
+        /home/ag2435/.conda/envs/fast-transformers-gpu/lib/python3.12/site-packages/torch/include/c10/util/strong_type.h:143:1: warning: attribute ignored [-Wattributes]
+          143 |   STRONG_NODISCARD
+              | ^
+        /home/ag2435/.conda/envs/fast-transformers-gpu/lib/python3.12/site-packages/torch/include/c10/util/strong_type.h:143:1: note: an attribute that appertains to a type-specifier is ignored
+        /home/ag2435/.conda/envs/fast-transformers-gpu/lib/python3.12/site-packages/torch/include/c10/util/strong_type.h:145:1: warning: attribute ignored [-Wattributes]
+          145 |   STRONG_NODISCARD
+              | ^
+        /home/ag2435/.conda/envs/fast-transformers-gpu/lib/python3.12/site-packages/torch/include/c10/util/strong_type.h:145:1: note: an attribute that appertains to a type-specifier is ignored
+        /home/ag2435/.conda/envs/fast-transformers-gpu/lib/python3.12/site-packages/torch/include/c10/util/strong_type.h:222:1: warning: attribute ignored [-Wattributes]
+          222 |   STRONG_NODISCARD
+              | ^
+        /home/ag2435/.conda/envs/fast-transformers-gpu/lib/python3.12/site-packages/torch/include/c10/util/strong_type.h:222:1: note: an attribute that appertains to a type-specifier is ignored
+        /home/ag2435/.conda/envs/fast-transformers-gpu/lib/python3.12/site-packages/torch/include/c10/util/strong_type.h:235:1: warning: attribute ignored [-Wattributes]
+          235 |   STRONG_NODISCARD
+              | ^
+        /home/ag2435/.conda/envs/fast-transformers-gpu/lib/python3.12/site-packages/torch/include/c10/util/strong_type.h:235:1: note: an attribute that appertains to a type-specifier is ignored
+        /home/ag2435/.conda/envs/fast-transformers-gpu/lib/python3.12/site-packages/torch/include/c10/util/strong_type.h:258:1: warning: attribute ignored [-Wattributes]
+          258 |     STRONG_NODISCARD
+              | ^
+        /home/ag2435/.conda/envs/fast-transformers-gpu/lib/python3.12/site-packages/torch/include/c10/util/strong_type.h:258:1: note: an attribute that appertains to a type-specifier is ignored
+        /home/ag2435/.conda/envs/fast-transformers-gpu/lib/python3.12/site-packages/torch/include/c10/util/strong_type.h:267:1: warning: attribute ignored [-Wattributes]
+          267 |     STRONG_NODISCARD
+              | ^
+        /home/ag2435/.conda/envs/fast-transformers-gpu/lib/python3.12/site-packages/torch/include/c10/util/strong_type.h:267:1: note: an attribute that appertains to a type-specifier is ignored
+        /home/ag2435/.conda/envs/fast-transformers-gpu/lib/python3.12/site-packages/torch/include/c10/util/strong_type.h:276:1: warning: attribute ignored [-Wattributes]
+          276 |     STRONG_NODISCARD
+              | ^
+        /home/ag2435/.conda/envs/fast-transformers-gpu/lib/python3.12/site-packages/torch/include/c10/util/strong_type.h:276:1: note: an attribute that appertains to a type-specifier is ignored
+        /home/ag2435/.conda/envs/fast-transformers-gpu/lib/python3.12/site-packages/torch/include/c10/util/strong_type.h:285:1: warning: attribute ignored [-Wattributes]
+          285 |     STRONG_NODISCARD
+              | ^
+        /home/ag2435/.conda/envs/fast-transformers-gpu/lib/python3.12/site-packages/torch/include/c10/util/strong_type.h:285:1: note: an attribute that appertains to a type-specifier is ignored
+        /home/ag2435/.conda/envs/fast-transformers-gpu/lib/python3.12/site-packages/torch/include/c10/util/strong_type.h:314:1: warning: attribute ignored [-Wattributes]
+          314 |     STRONG_NODISCARD
+              | ^
+        /home/ag2435/.conda/envs/fast-transformers-gpu/lib/python3.12/site-packages/torch/include/c10/util/strong_type.h:314:1: note: an attribute that appertains to a type-specifier is ignored
+        /home/ag2435/.conda/envs/fast-transformers-gpu/lib/python3.12/site-packages/torch/include/c10/util/strong_type.h:323:1: warning: attribute ignored [-Wattributes]
+          323 |     STRONG_NODISCARD
+              | ^
+        /home/ag2435/.conda/envs/fast-transformers-gpu/lib/python3.12/site-packages/torch/include/c10/util/strong_type.h:323:1: note: an attribute that appertains to a type-specifier is ignored
+        /home/ag2435/.conda/envs/fast-transformers-gpu/lib/python3.12/site-packages/torch/include/c10/util/strong_type.h:333:1: warning: attribute ignored [-Wattributes]
+          333 |     STRONG_NODISCARD
+              | ^
+        /home/ag2435/.conda/envs/fast-transformers-gpu/lib/python3.12/site-packages/torch/include/c10/util/strong_type.h:333:1: note: an attribute that appertains to a type-specifier is ignored
+        /home/ag2435/.conda/envs/fast-transformers-gpu/lib/python3.12/site-packages/torch/include/c10/util/strong_type.h:342:1: warning: attribute ignored [-Wattributes]
+          342 |     STRONG_NODISCARD
+              | ^
+        /home/ag2435/.conda/envs/fast-transformers-gpu/lib/python3.12/site-packages/torch/include/c10/util/strong_type.h:342:1: note: an attribute that appertains to a type-specifier is ignored
+        /home/ag2435/.conda/envs/fast-transformers-gpu/lib/python3.12/site-packages/torch/include/c10/util/strong_type.h:352:1: warning: attribute ignored [-Wattributes]
+          352 |     STRONG_NODISCARD
+              | ^
+        /home/ag2435/.conda/envs/fast-transformers-gpu/lib/python3.12/site-packages/torch/include/c10/util/strong_type.h:352:1: note: an attribute that appertains to a type-specifier is ignored
+        /home/ag2435/.conda/envs/fast-transformers-gpu/lib/python3.12/site-packages/torch/include/c10/util/strong_type.h:361:1: warning: attribute ignored [-Wattributes]
+          361 |     STRONG_NODISCARD
+              | ^
+        /home/ag2435/.conda/envs/fast-transformers-gpu/lib/python3.12/site-packages/torch/include/c10/util/strong_type.h:361:1: note: an attribute that appertains to a type-specifier is ignored
+        /home/ag2435/.conda/envs/fast-transformers-gpu/lib/python3.12/site-packages/torch/include/c10/util/strong_type.h:371:1: warning: attribute ignored [-Wattributes]
+          371 |     STRONG_NODISCARD
+              | ^
+        /home/ag2435/.conda/envs/fast-transformers-gpu/lib/python3.12/site-packages/torch/include/c10/util/strong_type.h:371:1: note: an attribute that appertains to a type-specifier is ignored
+        /home/ag2435/.conda/envs/fast-transformers-gpu/lib/python3.12/site-packages/torch/include/c10/util/strong_type.h:380:1: warning: attribute ignored [-Wattributes]
+          380 |     STRONG_NODISCARD
+              | ^
+        /home/ag2435/.conda/envs/fast-transformers-gpu/lib/python3.12/site-packages/torch/include/c10/util/strong_type.h:380:1: note: an attribute that appertains to a type-specifier is ignored
+        /home/ag2435/.conda/envs/fast-transformers-gpu/lib/python3.12/site-packages/torch/include/c10/util/strong_type.h:494:1: warning: attribute ignored [-Wattributes]
+          494 |   STRONG_NODISCARD
+              | ^
+        /home/ag2435/.conda/envs/fast-transformers-gpu/lib/python3.12/site-packages/torch/include/c10/util/strong_type.h:494:1: note: an attribute that appertains to a type-specifier is ignored
+        /home/ag2435/.conda/envs/fast-transformers-gpu/lib/python3.12/site-packages/torch/include/c10/util/strong_type.h:507:1: warning: attribute ignored [-Wattributes]
+          507 |   STRONG_NODISCARD
+              | ^
+        /home/ag2435/.conda/envs/fast-transformers-gpu/lib/python3.12/site-packages/torch/include/c10/util/strong_type.h:507:1: note: an attribute that appertains to a type-specifier is ignored
+        /home/ag2435/.conda/envs/fast-transformers-gpu/lib/python3.12/site-packages/torch/include/c10/util/strong_type.h:520:1: warning: attribute ignored [-Wattributes]
+          520 |   STRONG_NODISCARD
+              | ^
+        /home/ag2435/.conda/envs/fast-transformers-gpu/lib/python3.12/site-packages/torch/include/c10/util/strong_type.h:520:1: note: an attribute that appertains to a type-specifier is ignored
+        /home/ag2435/.conda/envs/fast-transformers-gpu/lib/python3.12/site-packages/torch/include/c10/util/strong_type.h:533:1: warning: attribute ignored [-Wattributes]
+          533 |   STRONG_NODISCARD
+              | ^
+        /home/ag2435/.conda/envs/fast-transformers-gpu/lib/python3.12/site-packages/torch/include/c10/util/strong_type.h:533:1: note: an attribute that appertains to a type-specifier is ignored
+        /home/ag2435/.conda/envs/fast-transformers-gpu/lib/python3.12/site-packages/torch/include/c10/util/strong_type.h:836:1: warning: attribute ignored [-Wattributes]
+          836 |   STRONG_NODISCARD
+              | ^
+        /home/ag2435/.conda/envs/fast-transformers-gpu/lib/python3.12/site-packages/torch/include/c10/util/strong_type.h:836:1: note: an attribute that appertains to a type-specifier is ignored
+        /home/ag2435/.conda/envs/fast-transformers-gpu/lib/python3.12/site-packages/torch/include/c10/util/strong_type.h:871:1: warning: attribute ignored [-Wattributes]
+          871 |   STRONG_NODISCARD
+              | ^
+        /home/ag2435/.conda/envs/fast-transformers-gpu/lib/python3.12/site-packages/torch/include/c10/util/strong_type.h:871:1: note: an attribute that appertains to a type-specifier is ignored
+        /home/ag2435/.conda/envs/fast-transformers-gpu/lib/python3.12/site-packages/torch/include/c10/util/strong_type.h:882:1: warning: attribute ignored [-Wattributes]
+          882 |   STRONG_NODISCARD
+              | ^
+        /home/ag2435/.conda/envs/fast-transformers-gpu/lib/python3.12/site-packages/torch/include/c10/util/strong_type.h:882:1: note: an attribute that appertains to a type-specifier is ignored
+        /home/ag2435/.conda/envs/fast-transformers-gpu/lib/python3.12/site-packages/torch/include/c10/util/strong_type.h:893:1: warning: attribute ignored [-Wattributes]
+          893 |   STRONG_NODISCARD
+              | ^
+        /home/ag2435/.conda/envs/fast-transformers-gpu/lib/python3.12/site-packages/torch/include/c10/util/strong_type.h:893:1: note: an attribute that appertains to a type-specifier is ignored
+        /home/ag2435/.conda/envs/fast-transformers-gpu/lib/python3.12/site-packages/torch/include/c10/util/strong_type.h:918:1: warning: attribute ignored [-Wattributes]
+          918 |   STRONG_NODISCARD
+              | ^
+        /home/ag2435/.conda/envs/fast-transformers-gpu/lib/python3.12/site-packages/torch/include/c10/util/strong_type.h:918:1: note: an attribute that appertains to a type-specifier is ignored
+        /home/ag2435/.conda/envs/fast-transformers-gpu/lib/python3.12/site-packages/torch/include/c10/util/strong_type.h:932:1: warning: attribute ignored [-Wattributes]
+          932 |   STRONG_NODISCARD
+              | ^
+        /home/ag2435/.conda/envs/fast-transformers-gpu/lib/python3.12/site-packages/torch/include/c10/util/strong_type.h:932:1: note: an attribute that appertains to a type-specifier is ignored
+        /home/ag2435/.conda/envs/fast-transformers-gpu/lib/python3.12/site-packages/torch/include/c10/util/strong_type.h:946:1: warning: attribute ignored [-Wattributes]
+          946 |   STRONG_NODISCARD
+              | ^
+        /home/ag2435/.conda/envs/fast-transformers-gpu/lib/python3.12/site-packages/torch/include/c10/util/strong_type.h:946:1: note: an attribute that appertains to a type-specifier is ignored
+        /home/ag2435/.conda/envs/fast-transformers-gpu/lib/python3.12/site-packages/torch/include/c10/util/strong_type.h:960:1: warning: attribute ignored [-Wattributes]
+          960 |   STRONG_NODISCARD
+              | ^
+        /home/ag2435/.conda/envs/fast-transformers-gpu/lib/python3.12/site-packages/torch/include/c10/util/strong_type.h:960:1: note: an attribute that appertains to a type-specifier is ignored
+        /home/ag2435/.conda/envs/fast-transformers-gpu/lib/python3.12/site-packages/torch/include/c10/util/strong_type.h:994:1: warning: attribute ignored [-Wattributes]
+          994 |     STRONG_NODISCARD
+              | ^
+        /home/ag2435/.conda/envs/fast-transformers-gpu/lib/python3.12/site-packages/torch/include/c10/util/strong_type.h:994:1: note: an attribute that appertains to a type-specifier is ignored
+        /home/ag2435/.conda/envs/fast-transformers-gpu/lib/python3.12/site-packages/torch/include/c10/util/strong_type.h:1065:1: warning: attribute ignored [-Wattributes]
+         1065 |     STRONG_NODISCARD
+              | ^
+        /home/ag2435/.conda/envs/fast-transformers-gpu/lib/python3.12/site-packages/torch/include/c10/util/strong_type.h:1065:1: note: an attribute that appertains to a type-specifier is ignored
+        /home/ag2435/.conda/envs/fast-transformers-gpu/lib/python3.12/site-packages/torch/include/c10/util/strong_type.h:1077:1: warning: attribute ignored [-Wattributes]
+         1077 |     STRONG_NODISCARD
+              | ^
+        /home/ag2435/.conda/envs/fast-transformers-gpu/lib/python3.12/site-packages/torch/include/c10/util/strong_type.h:1077:1: note: an attribute that appertains to a type-specifier is ignored
+        /home/ag2435/.conda/envs/fast-transformers-gpu/lib/python3.12/site-packages/torch/include/c10/util/strong_type.h:1089:1: warning: attribute ignored [-Wattributes]
+         1089 |     STRONG_NODISCARD
+              | ^
+        /home/ag2435/.conda/envs/fast-transformers-gpu/lib/python3.12/site-packages/torch/include/c10/util/strong_type.h:1089:1: note: an attribute that appertains to a type-specifier is ignored
+        /home/ag2435/.conda/envs/fast-transformers-gpu/lib/python3.12/site-packages/torch/include/c10/util/strong_type.h:1101:1: warning: attribute ignored [-Wattributes]
+         1101 |     STRONG_NODISCARD
+              | ^
+        /home/ag2435/.conda/envs/fast-transformers-gpu/lib/python3.12/site-packages/torch/include/c10/util/strong_type.h:1101:1: note: an attribute that appertains to a type-specifier is ignored
+        /home/ag2435/.conda/envs/fast-transformers-gpu/lib/python3.12/site-packages/torch/include/c10/util/strong_type.h:1114:1: warning: attribute ignored [-Wattributes]
+         1114 |     STRONG_NODISCARD
+              | ^
+        /home/ag2435/.conda/envs/fast-transformers-gpu/lib/python3.12/site-packages/torch/include/c10/util/strong_type.h:1114:1: note: an attribute that appertains to a type-specifier is ignored
+        /home/ag2435/.conda/envs/fast-transformers-gpu/lib/python3.12/site-packages/torch/include/c10/util/strong_type.h:1198:1: warning: attribute ignored [-Wattributes]
+         1198 |     STRONG_NODISCARD
+              | ^
+        /home/ag2435/.conda/envs/fast-transformers-gpu/lib/python3.12/site-packages/torch/include/c10/util/strong_type.h:1198:1: note: an attribute that appertains to a type-specifier is ignored
+        /home/ag2435/.conda/envs/fast-transformers-gpu/lib/python3.12/site-packages/torch/include/c10/util/strong_type.h:1210:1: warning: attribute ignored [-Wattributes]
+         1210 |     STRONG_NODISCARD
+              | ^
+        /home/ag2435/.conda/envs/fast-transformers-gpu/lib/python3.12/site-packages/torch/include/c10/util/strong_type.h:1210:1: note: an attribute that appertains to a type-specifier is ignored
+        /home/ag2435/.conda/envs/fast-transformers-gpu/lib/python3.12/site-packages/torch/include/c10/util/strong_type.h:1222:1: warning: attribute ignored [-Wattributes]
+         1222 |     STRONG_NODISCARD
+              | ^
+        /home/ag2435/.conda/envs/fast-transformers-gpu/lib/python3.12/site-packages/torch/include/c10/util/strong_type.h:1222:1: note: an attribute that appertains to a type-specifier is ignored
+        /home/ag2435/.conda/envs/fast-transformers-gpu/lib/python3.12/site-packages/torch/include/c10/util/strong_type.h:1234:1: warning: attribute ignored [-Wattributes]
+         1234 |     STRONG_NODISCARD
+              | ^
+        /home/ag2435/.conda/envs/fast-transformers-gpu/lib/python3.12/site-packages/torch/include/c10/util/strong_type.h:1234:1: note: an attribute that appertains to a type-specifier is ignored
+        /home/ag2435/.conda/envs/fast-transformers-gpu/lib/python3.12/site-packages/torch/include/c10/util/strong_type.h:1247:1: warning: attribute ignored [-Wattributes]
+         1247 |     STRONG_NODISCARD
+              | ^
+        /home/ag2435/.conda/envs/fast-transformers-gpu/lib/python3.12/site-packages/torch/include/c10/util/strong_type.h:1247:1: note: an attribute that appertains to a type-specifier is ignored
+        /home/ag2435/.conda/envs/fast-transformers-gpu/lib/python3.12/site-packages/torch/include/c10/util/strong_type.h:1260:1: warning: attribute ignored [-Wattributes]
+         1260 |     STRONG_NODISCARD
+              | ^
+        /home/ag2435/.conda/envs/fast-transformers-gpu/lib/python3.12/site-packages/torch/include/c10/util/strong_type.h:1260:1: note: an attribute that appertains to a type-specifier is ignored
+        error: command '/usr/local/cuda/bin/nvcc' failed with exit code 1
+        [end of output]
+    
+    note: This error originates from a subprocess, and is likely not a problem with pip.
+error: subprocess-exited-with-error
+
+× python setup.py develop did not run successfully.
+│ exit code: 1
+╰─> [215 lines of output]
+    running develop
+    /home/ag2435/.conda/envs/fast-transformers-gpu/lib/python3.12/site-packages/setuptools/command/develop.py:40: EasyInstallDeprecationWarning: easy_install command is deprecated.
+    !!
+    
+            ********************************************************************************
+            Please avoid running ``setup.py`` and ``easy_install``.
+            Instead, use pypa/build, pypa/installer or other
+            standards-based tools.
+    
+            See https://github.com/pypa/setuptools/issues/917 for details.
+            ********************************************************************************
+    
+    !!
+      easy_install.initialize_options(self)
+    /home/ag2435/.conda/envs/fast-transformers-gpu/lib/python3.12/site-packages/setuptools/_distutils/cmd.py:66: SetuptoolsDeprecationWarning: setup.py install is deprecated.
+    !!
+    
+            ********************************************************************************
+            Please avoid running ``setup.py`` directly.
+            Instead, use pypa/build, pypa/installer or other
+            standards-based tools.
+    
+            See https://blog.ganssle.io/articles/2021/10/setup-py-deprecated.html for details.
+            ********************************************************************************
+    
+    !!
+      self.initialize_options()
+    running egg_info
+    writing pytorch_fast_transformers.egg-info/PKG-INFO
+    writing dependency_links to pytorch_fast_transformers.egg-info/dependency_links.txt
+    writing requirements to pytorch_fast_transformers.egg-info/requires.txt
+    writing top-level names to pytorch_fast_transformers.egg-info/top_level.txt
+    /home/ag2435/.conda/envs/fast-transformers-gpu/lib/python3.12/site-packages/torch/utils/cpp_extension.py:500: UserWarning: Attempted to use ninja as the BuildExtension backend but we could not find ninja.. Falling back to using the slow distutils backend.
+      warnings.warn(msg.format('we could not find ninja.'))
+    reading manifest file 'pytorch_fast_transformers.egg-info/SOURCES.txt'
+    adding license file 'LICENSE'
+    writing manifest file 'pytorch_fast_transformers.egg-info/SOURCES.txt'
+    running build_ext
+    /home/ag2435/.conda/envs/fast-transformers-gpu/lib/python3.12/site-packages/torch/utils/cpp_extension.py:415: UserWarning: The detected CUDA version (11.2) has a minor version mismatch with the version that was used to compile PyTorch (11.8). Most likely this shouldn't be a problem.
+      warnings.warn(CUDA_MISMATCH_WARN.format(cuda_str_version, torch.version.cuda))
+    building 'fast_transformers.hashing.hash_cuda' extension
+    /usr/local/cuda/bin/nvcc -I/home/ag2435/.conda/envs/fast-transformers-gpu/lib/python3.12/site-packages/torch/include -I/home/ag2435/.conda/envs/fast-transformers-gpu/lib/python3.12/site-packages/torch/include/torch/csrc/api/include -I/home/ag2435/.conda/envs/fast-transformers-gpu/lib/python3.12/site-packages/torch/include/TH -I/home/ag2435/.conda/envs/fast-transformers-gpu/lib/python3.12/site-packages/torch/include/THC -I/usr/local/cuda/include -I/home/ag2435/.conda/envs/fast-transformers-gpu/include/python3.12 -c fast_transformers/hashing/hash_cuda.cu -o build/temp.linux-x86_64-cpython-312/fast_transformers/hashing/hash_cuda.o -D__CUDA_NO_HALF_OPERATORS__ -D__CUDA_NO_HALF_CONVERSIONS__ -D__CUDA_NO_BFLOAT16_CONVERSIONS__ -D__CUDA_NO_HALF2_OPERATORS__ --expt-relaxed-constexpr --compiler-options '-fPIC' -DTORCH_API_INCLUDE_EXTENSION_H -DPYBIND11_COMPILER_TYPE=\"_gcc\" -DPYBIND11_STDLIB=\"_libstdcpp\" -DPYBIND11_BUILD_ABI=\"_cxxabi1011\" -DTORCH_EXTENSION_NAME=hash_cuda -D_GLIBCXX_USE_CXX11_ABI=0 -gencode=arch=compute_86,code=compute_86 -gencode=arch=compute_86,code=sm_86 -std=c++17
+    /home/ag2435/.conda/envs/fast-transformers-gpu/lib/python3.12/site-packages/torch/include/torch/csrc/jit/api/module.h: In constructor ‘torch::jit::slot_iterator_impl<Policy>::slot_iterator_impl(torch::jit::Module, bool, bool)’:
+    /home/ag2435/.conda/envs/fast-transformers-gpu/lib/python3.12/site-packages/torch/include/torch/csrc/jit/api/module.h:409:113: error: use of deleted function ‘torch::jit::Module::Module(torch::jit::Module&&)’
+      409 |       bool return_module) // if true include root itself as the first thing
+          |                                                                                                                 ^
+    /home/ag2435/.conda/envs/fast-transformers-gpu/lib/python3.12/site-packages/torch/include/torch/csrc/jit/api/module.h:93:1: note: declared here
+       93 |   Module(Module&&) noexcept = default;
+          | ^ ~~~~
+    /home/ag2435/.conda/envs/fast-transformers-gpu/lib/python3.12/site-packages/torch/include/c10/util/strong_type.h: At global scope:
+    /home/ag2435/.conda/envs/fast-transformers-gpu/lib/python3.12/site-packages/torch/include/c10/util/strong_type.h:141:1: warning: attribute ignored [-Wattributes]
+      141 |   STRONG_NODISCARD
+          | ^
+    /home/ag2435/.conda/envs/fast-transformers-gpu/lib/python3.12/site-packages/torch/include/c10/util/strong_type.h:141:1: note: an attribute that appertains to a type-specifier is ignored
+    /home/ag2435/.conda/envs/fast-transformers-gpu/lib/python3.12/site-packages/torch/include/c10/util/strong_type.h:143:1: warning: attribute ignored [-Wattributes]
+      143 |   STRONG_NODISCARD
+          | ^
+    /home/ag2435/.conda/envs/fast-transformers-gpu/lib/python3.12/site-packages/torch/include/c10/util/strong_type.h:143:1: note: an attribute that appertains to a type-specifier is ignored
+    /home/ag2435/.conda/envs/fast-transformers-gpu/lib/python3.12/site-packages/torch/include/c10/util/strong_type.h:145:1: warning: attribute ignored [-Wattributes]
+      145 |   STRONG_NODISCARD
+          | ^
+    /home/ag2435/.conda/envs/fast-transformers-gpu/lib/python3.12/site-packages/torch/include/c10/util/strong_type.h:145:1: note: an attribute that appertains to a type-specifier is ignored
+    /home/ag2435/.conda/envs/fast-transformers-gpu/lib/python3.12/site-packages/torch/include/c10/util/strong_type.h:222:1: warning: attribute ignored [-Wattributes]
+      222 |   STRONG_NODISCARD
+          | ^
+    /home/ag2435/.conda/envs/fast-transformers-gpu/lib/python3.12/site-packages/torch/include/c10/util/strong_type.h:222:1: note: an attribute that appertains to a type-specifier is ignored
+    /home/ag2435/.conda/envs/fast-transformers-gpu/lib/python3.12/site-packages/torch/include/c10/util/strong_type.h:235:1: warning: attribute ignored [-Wattributes]
+      235 |   STRONG_NODISCARD
+          | ^
+    /home/ag2435/.conda/envs/fast-transformers-gpu/lib/python3.12/site-packages/torch/include/c10/util/strong_type.h:235:1: note: an attribute that appertains to a type-specifier is ignored
+    /home/ag2435/.conda/envs/fast-transformers-gpu/lib/python3.12/site-packages/torch/include/c10/util/strong_type.h:258:1: warning: attribute ignored [-Wattributes]
+      258 |     STRONG_NODISCARD
+          | ^
+    /home/ag2435/.conda/envs/fast-transformers-gpu/lib/python3.12/site-packages/torch/include/c10/util/strong_type.h:258:1: note: an attribute that appertains to a type-specifier is ignored
+    /home/ag2435/.conda/envs/fast-transformers-gpu/lib/python3.12/site-packages/torch/include/c10/util/strong_type.h:267:1: warning: attribute ignored [-Wattributes]
+      267 |     STRONG_NODISCARD
+          | ^
+    /home/ag2435/.conda/envs/fast-transformers-gpu/lib/python3.12/site-packages/torch/include/c10/util/strong_type.h:267:1: note: an attribute that appertains to a type-specifier is ignored
+    /home/ag2435/.conda/envs/fast-transformers-gpu/lib/python3.12/site-packages/torch/include/c10/util/strong_type.h:276:1: warning: attribute ignored [-Wattributes]
+      276 |     STRONG_NODISCARD
+          | ^
+    /home/ag2435/.conda/envs/fast-transformers-gpu/lib/python3.12/site-packages/torch/include/c10/util/strong_type.h:276:1: note: an attribute that appertains to a type-specifier is ignored
+    /home/ag2435/.conda/envs/fast-transformers-gpu/lib/python3.12/site-packages/torch/include/c10/util/strong_type.h:285:1: warning: attribute ignored [-Wattributes]
+      285 |     STRONG_NODISCARD
+          | ^
+    /home/ag2435/.conda/envs/fast-transformers-gpu/lib/python3.12/site-packages/torch/include/c10/util/strong_type.h:285:1: note: an attribute that appertains to a type-specifier is ignored
+    /home/ag2435/.conda/envs/fast-transformers-gpu/lib/python3.12/site-packages/torch/include/c10/util/strong_type.h:314:1: warning: attribute ignored [-Wattributes]
+      314 |     STRONG_NODISCARD
+          | ^
+    /home/ag2435/.conda/envs/fast-transformers-gpu/lib/python3.12/site-packages/torch/include/c10/util/strong_type.h:314:1: note: an attribute that appertains to a type-specifier is ignored
+    /home/ag2435/.conda/envs/fast-transformers-gpu/lib/python3.12/site-packages/torch/include/c10/util/strong_type.h:323:1: warning: attribute ignored [-Wattributes]
+      323 |     STRONG_NODISCARD
+          | ^
+    /home/ag2435/.conda/envs/fast-transformers-gpu/lib/python3.12/site-packages/torch/include/c10/util/strong_type.h:323:1: note: an attribute that appertains to a type-specifier is ignored
+    /home/ag2435/.conda/envs/fast-transformers-gpu/lib/python3.12/site-packages/torch/include/c10/util/strong_type.h:333:1: warning: attribute ignored [-Wattributes]
+      333 |     STRONG_NODISCARD
+          | ^
+    /home/ag2435/.conda/envs/fast-transformers-gpu/lib/python3.12/site-packages/torch/include/c10/util/strong_type.h:333:1: note: an attribute that appertains to a type-specifier is ignored
+    /home/ag2435/.conda/envs/fast-transformers-gpu/lib/python3.12/site-packages/torch/include/c10/util/strong_type.h:342:1: warning: attribute ignored [-Wattributes]
+      342 |     STRONG_NODISCARD
+          | ^
+    /home/ag2435/.conda/envs/fast-transformers-gpu/lib/python3.12/site-packages/torch/include/c10/util/strong_type.h:342:1: note: an attribute that appertains to a type-specifier is ignored
+    /home/ag2435/.conda/envs/fast-transformers-gpu/lib/python3.12/site-packages/torch/include/c10/util/strong_type.h:352:1: warning: attribute ignored [-Wattributes]
+      352 |     STRONG_NODISCARD
+          | ^
+    /home/ag2435/.conda/envs/fast-transformers-gpu/lib/python3.12/site-packages/torch/include/c10/util/strong_type.h:352:1: note: an attribute that appertains to a type-specifier is ignored
+    /home/ag2435/.conda/envs/fast-transformers-gpu/lib/python3.12/site-packages/torch/include/c10/util/strong_type.h:361:1: warning: attribute ignored [-Wattributes]
+      361 |     STRONG_NODISCARD
+          | ^
+    /home/ag2435/.conda/envs/fast-transformers-gpu/lib/python3.12/site-packages/torch/include/c10/util/strong_type.h:361:1: note: an attribute that appertains to a type-specifier is ignored
+    /home/ag2435/.conda/envs/fast-transformers-gpu/lib/python3.12/site-packages/torch/include/c10/util/strong_type.h:371:1: warning: attribute ignored [-Wattributes]
+      371 |     STRONG_NODISCARD
+          | ^
+    /home/ag2435/.conda/envs/fast-transformers-gpu/lib/python3.12/site-packages/torch/include/c10/util/strong_type.h:371:1: note: an attribute that appertains to a type-specifier is ignored
+    /home/ag2435/.conda/envs/fast-transformers-gpu/lib/python3.12/site-packages/torch/include/c10/util/strong_type.h:380:1: warning: attribute ignored [-Wattributes]
+      380 |     STRONG_NODISCARD
+          | ^
+    /home/ag2435/.conda/envs/fast-transformers-gpu/lib/python3.12/site-packages/torch/include/c10/util/strong_type.h:380:1: note: an attribute that appertains to a type-specifier is ignored
+    /home/ag2435/.conda/envs/fast-transformers-gpu/lib/python3.12/site-packages/torch/include/c10/util/strong_type.h:494:1: warning: attribute ignored [-Wattributes]
+      494 |   STRONG_NODISCARD
+          | ^
+    /home/ag2435/.conda/envs/fast-transformers-gpu/lib/python3.12/site-packages/torch/include/c10/util/strong_type.h:494:1: note: an attribute that appertains to a type-specifier is ignored
+    /home/ag2435/.conda/envs/fast-transformers-gpu/lib/python3.12/site-packages/torch/include/c10/util/strong_type.h:507:1: warning: attribute ignored [-Wattributes]
+      507 |   STRONG_NODISCARD
+          | ^
+    /home/ag2435/.conda/envs/fast-transformers-gpu/lib/python3.12/site-packages/torch/include/c10/util/strong_type.h:507:1: note: an attribute that appertains to a type-specifier is ignored
+    /home/ag2435/.conda/envs/fast-transformers-gpu/lib/python3.12/site-packages/torch/include/c10/util/strong_type.h:520:1: warning: attribute ignored [-Wattributes]
+      520 |   STRONG_NODISCARD
+          | ^
+    /home/ag2435/.conda/envs/fast-transformers-gpu/lib/python3.12/site-packages/torch/include/c10/util/strong_type.h:520:1: note: an attribute that appertains to a type-specifier is ignored
+    /home/ag2435/.conda/envs/fast-transformers-gpu/lib/python3.12/site-packages/torch/include/c10/util/strong_type.h:533:1: warning: attribute ignored [-Wattributes]
+      533 |   STRONG_NODISCARD
+          | ^
+    /home/ag2435/.conda/envs/fast-transformers-gpu/lib/python3.12/site-packages/torch/include/c10/util/strong_type.h:533:1: note: an attribute that appertains to a type-specifier is ignored
+    /home/ag2435/.conda/envs/fast-transformers-gpu/lib/python3.12/site-packages/torch/include/c10/util/strong_type.h:836:1: warning: attribute ignored [-Wattributes]
+      836 |   STRONG_NODISCARD
+          | ^
+    /home/ag2435/.conda/envs/fast-transformers-gpu/lib/python3.12/site-packages/torch/include/c10/util/strong_type.h:836:1: note: an attribute that appertains to a type-specifier is ignored
+    /home/ag2435/.conda/envs/fast-transformers-gpu/lib/python3.12/site-packages/torch/include/c10/util/strong_type.h:871:1: warning: attribute ignored [-Wattributes]
+      871 |   STRONG_NODISCARD
+          | ^
+    /home/ag2435/.conda/envs/fast-transformers-gpu/lib/python3.12/site-packages/torch/include/c10/util/strong_type.h:871:1: note: an attribute that appertains to a type-specifier is ignored
+    /home/ag2435/.conda/envs/fast-transformers-gpu/lib/python3.12/site-packages/torch/include/c10/util/strong_type.h:882:1: warning: attribute ignored [-Wattributes]
+      882 |   STRONG_NODISCARD
+          | ^
+    /home/ag2435/.conda/envs/fast-transformers-gpu/lib/python3.12/site-packages/torch/include/c10/util/strong_type.h:882:1: note: an attribute that appertains to a type-specifier is ignored
+    /home/ag2435/.conda/envs/fast-transformers-gpu/lib/python3.12/site-packages/torch/include/c10/util/strong_type.h:893:1: warning: attribute ignored [-Wattributes]
+      893 |   STRONG_NODISCARD
+          | ^
+    /home/ag2435/.conda/envs/fast-transformers-gpu/lib/python3.12/site-packages/torch/include/c10/util/strong_type.h:893:1: note: an attribute that appertains to a type-specifier is ignored
+    /home/ag2435/.conda/envs/fast-transformers-gpu/lib/python3.12/site-packages/torch/include/c10/util/strong_type.h:918:1: warning: attribute ignored [-Wattributes]
+      918 |   STRONG_NODISCARD
+          | ^
+    /home/ag2435/.conda/envs/fast-transformers-gpu/lib/python3.12/site-packages/torch/include/c10/util/strong_type.h:918:1: note: an attribute that appertains to a type-specifier is ignored
+    /home/ag2435/.conda/envs/fast-transformers-gpu/lib/python3.12/site-packages/torch/include/c10/util/strong_type.h:932:1: warning: attribute ignored [-Wattributes]
+      932 |   STRONG_NODISCARD
+          | ^
+    /home/ag2435/.conda/envs/fast-transformers-gpu/lib/python3.12/site-packages/torch/include/c10/util/strong_type.h:932:1: note: an attribute that appertains to a type-specifier is ignored
+    /home/ag2435/.conda/envs/fast-transformers-gpu/lib/python3.12/site-packages/torch/include/c10/util/strong_type.h:946:1: warning: attribute ignored [-Wattributes]
+      946 |   STRONG_NODISCARD
+          | ^
+    /home/ag2435/.conda/envs/fast-transformers-gpu/lib/python3.12/site-packages/torch/include/c10/util/strong_type.h:946:1: note: an attribute that appertains to a type-specifier is ignored
+    /home/ag2435/.conda/envs/fast-transformers-gpu/lib/python3.12/site-packages/torch/include/c10/util/strong_type.h:960:1: warning: attribute ignored [-Wattributes]
+      960 |   STRONG_NODISCARD
+          | ^
+    /home/ag2435/.conda/envs/fast-transformers-gpu/lib/python3.12/site-packages/torch/include/c10/util/strong_type.h:960:1: note: an attribute that appertains to a type-specifier is ignored
+    /home/ag2435/.conda/envs/fast-transformers-gpu/lib/python3.12/site-packages/torch/include/c10/util/strong_type.h:994:1: warning: attribute ignored [-Wattributes]
+      994 |     STRONG_NODISCARD
+          | ^
+    /home/ag2435/.conda/envs/fast-transformers-gpu/lib/python3.12/site-packages/torch/include/c10/util/strong_type.h:994:1: note: an attribute that appertains to a type-specifier is ignored
+    /home/ag2435/.conda/envs/fast-transformers-gpu/lib/python3.12/site-packages/torch/include/c10/util/strong_type.h:1065:1: warning: attribute ignored [-Wattributes]
+     1065 |     STRONG_NODISCARD
+          | ^
+    /home/ag2435/.conda/envs/fast-transformers-gpu/lib/python3.12/site-packages/torch/include/c10/util/strong_type.h:1065:1: note: an attribute that appertains to a type-specifier is ignored
+    /home/ag2435/.conda/envs/fast-transformers-gpu/lib/python3.12/site-packages/torch/include/c10/util/strong_type.h:1077:1: warning: attribute ignored [-Wattributes]
+     1077 |     STRONG_NODISCARD
+          | ^
+    /home/ag2435/.conda/envs/fast-transformers-gpu/lib/python3.12/site-packages/torch/include/c10/util/strong_type.h:1077:1: note: an attribute that appertains to a type-specifier is ignored
+    /home/ag2435/.conda/envs/fast-transformers-gpu/lib/python3.12/site-packages/torch/include/c10/util/strong_type.h:1089:1: warning: attribute ignored [-Wattributes]
+     1089 |     STRONG_NODISCARD
+          | ^
+    /home/ag2435/.conda/envs/fast-transformers-gpu/lib/python3.12/site-packages/torch/include/c10/util/strong_type.h:1089:1: note: an attribute that appertains to a type-specifier is ignored
+    /home/ag2435/.conda/envs/fast-transformers-gpu/lib/python3.12/site-packages/torch/include/c10/util/strong_type.h:1101:1: warning: attribute ignored [-Wattributes]
+     1101 |     STRONG_NODISCARD
+          | ^
+    /home/ag2435/.conda/envs/fast-transformers-gpu/lib/python3.12/site-packages/torch/include/c10/util/strong_type.h:1101:1: note: an attribute that appertains to a type-specifier is ignored
+    /home/ag2435/.conda/envs/fast-transformers-gpu/lib/python3.12/site-packages/torch/include/c10/util/strong_type.h:1114:1: warning: attribute ignored [-Wattributes]
+     1114 |     STRONG_NODISCARD
+          | ^
+    /home/ag2435/.conda/envs/fast-transformers-gpu/lib/python3.12/site-packages/torch/include/c10/util/strong_type.h:1114:1: note: an attribute that appertains to a type-specifier is ignored
+    /home/ag2435/.conda/envs/fast-transformers-gpu/lib/python3.12/site-packages/torch/include/c10/util/strong_type.h:1198:1: warning: attribute ignored [-Wattributes]
+     1198 |     STRONG_NODISCARD
+          | ^
+    /home/ag2435/.conda/envs/fast-transformers-gpu/lib/python3.12/site-packages/torch/include/c10/util/strong_type.h:1198:1: note: an attribute that appertains to a type-specifier is ignored
+    /home/ag2435/.conda/envs/fast-transformers-gpu/lib/python3.12/site-packages/torch/include/c10/util/strong_type.h:1210:1: warning: attribute ignored [-Wattributes]
+     1210 |     STRONG_NODISCARD
+          | ^
+    /home/ag2435/.conda/envs/fast-transformers-gpu/lib/python3.12/site-packages/torch/include/c10/util/strong_type.h:1210:1: note: an attribute that appertains to a type-specifier is ignored
+    /home/ag2435/.conda/envs/fast-transformers-gpu/lib/python3.12/site-packages/torch/include/c10/util/strong_type.h:1222:1: warning: attribute ignored [-Wattributes]
+     1222 |     STRONG_NODISCARD
+          | ^
+    /home/ag2435/.conda/envs/fast-transformers-gpu/lib/python3.12/site-packages/torch/include/c10/util/strong_type.h:1222:1: note: an attribute that appertains to a type-specifier is ignored
+    /home/ag2435/.conda/envs/fast-transformers-gpu/lib/python3.12/site-packages/torch/include/c10/util/strong_type.h:1234:1: warning: attribute ignored [-Wattributes]
+     1234 |     STRONG_NODISCARD
+          | ^
+    /home/ag2435/.conda/envs/fast-transformers-gpu/lib/python3.12/site-packages/torch/include/c10/util/strong_type.h:1234:1: note: an attribute that appertains to a type-specifier is ignored
+    /home/ag2435/.conda/envs/fast-transformers-gpu/lib/python3.12/site-packages/torch/include/c10/util/strong_type.h:1247:1: warning: attribute ignored [-Wattributes]
+     1247 |     STRONG_NODISCARD
+          | ^
+    /home/ag2435/.conda/envs/fast-transformers-gpu/lib/python3.12/site-packages/torch/include/c10/util/strong_type.h:1247:1: note: an attribute that appertains to a type-specifier is ignored
+    /home/ag2435/.conda/envs/fast-transformers-gpu/lib/python3.12/site-packages/torch/include/c10/util/strong_type.h:1260:1: warning: attribute ignored [-Wattributes]
+     1260 |     STRONG_NODISCARD
+          | ^
+    /home/ag2435/.conda/envs/fast-transformers-gpu/lib/python3.12/site-packages/torch/include/c10/util/strong_type.h:1260:1: note: an attribute that appertains to a type-specifier is ignored
+    error: command '/usr/local/cuda/bin/nvcc' failed with exit code 1
+    [end of output]
+
+note: This error originates from a subprocess, and is likely not a problem with pip.
